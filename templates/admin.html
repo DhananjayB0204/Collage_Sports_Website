@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Banner</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: #f8f8f8;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .sidebar img {
+            margin-bottom: 30px;
+            margin-left: 70px;
+            margin-top: 40px;
+        }
+
+        .sidebar a {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            text-align: left;
+        }
+
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+
+        .sidebar1 {
+            background-color: orange;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .sidebar1 i {
+            margin-right: 20px;
+            font-size: 1.5em;
+            margin-left: 25px;
+        }
+
+        .content-wrapper {
+            margin-left: 320px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f8f8;
+        }
+
+        .content {
+            width: 100%;
+            
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .header {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .b {
+            text-align: center;
+            color: #274686;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .banner-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .banner-section .input-group,
+        .banner-section input[type="text"],
+        .banner-section input[type="file"] {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group input,
+        .input-group-addon {
+            height: 45px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+        }
+
+        .input-group input {
+            width: calc(100% - 40px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons .add {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .buttons .discard {
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+
+        input {
+            width: 100%;
+            height: auto;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        
+        label {
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                padding: 10px;
+                box-shadow: none;
+            }
+
+            .sidebar img {
+                margin: 0 auto 20px;
+            }
+
+            .sidebar1 i {
+                margin-left: 0;
+                margin-right: 10px;
+            }
+
+            .sidebar a {
+                text-align: center;
+                margin-bottom: 5px;
+            }
+
+            .content-wrapper {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            .content {
+                width: 100%;
+            }
+
+            .header h1 {
+                text-align: center;
+            }
+
+            .description {
+                text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    
+
+    <div class="sidebar">
+        <img src="{{ url_for('static', filename='images/logoacsn.png.png') }}" alt="College Logo" class="college-logo">
+        <div class="header">
+            <p class="b"><b>Government College of Engineering, Chhatrapati Sambhajinagar</b></p>
+        </div>
+        <a class="sidebar1" href="{{ url_for('admin') }}"><i class="fa fa-home fa-lg"></i><b>Website Banner</b></a>
+        <a class="sidebar1" href="{{ url_for('sports_sec') }}"><i class="fa fa-soccer-ball-o fa-lg"></i><b>Our Sports</b></a>
+        <a class="sidebar1" href="{{ url_for('notices') }}"><i class="fa fa-bell fa-lg"></i><b>Notice</b></a>
+        <a class="sidebar1" href="#"><i class="fa fa-graduation-cap fa-lg"></i><b>Academic Programmes</b></a>
+        <a class="sidebar1" href="#"><i class="fa fa-trophy fa-lg"></i><b>Hall of Fame</b></a>
+        <a class="sidebar1" href="#"><i class="fa fa-lightbulb-o fa-lg"></i><b>Our Inspiration</b></a>
+        <a class="sidebar1" href="{{ url_for('logout') }}"><i class="fa fa-sign-out fa-lg"></i><b>Log Out</b></a>
+
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="header">
+                <h1 ><b>Website Banner</b></h1>
+                <p class="description">Enter a unique Image for the Banner you'd like people to see it.</p>
+            </div>
+            <form method="POST" action="{{ url_for('upload_banner') }}" enctype="multipart/form-data">
+                <label for="Image">Image</label>
+                <div class="banner-section">
+                    <div class="input-group">
+                        <input type="file" name="banner_image" class="form-control" style="border-radius: 10px;" required>
+                    </div>
+                    <label for="description">Description</label>
+                    <div class="input-group">
+                        <input style="border-radius: 10px;" type="text" name="description" placeholder="Type here" class="form-control" required>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="add" type="submit">Add Banner</button>
+                    <button class="discard" type="reset">Discard</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

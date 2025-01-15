@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Banner</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        margin: 0;
+    }
+
+    .sidebar {
+        width: 300px;
+        background-color: #f8f8f8;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        height: 100vh;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sidebar img {
+        margin-bottom: 30px;
+        margin-left: 70px;
+        margin-top: 40px;
+    }
+
+    .sidebar a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        text-align: left;
+    }
+
+    .sidebar a:hover {
+        background-color: #ddd;
+    }
+
+    .sidebar1 {
+        background-color: orange;
+        text-align: left;
+        padding: 20px;
+    }
+
+    .sidebar1 i {
+        margin-right: 20px;
+        font-size: 1.5em;
+        margin-left: 25px;
+    }
+
+    .content-wrapper {
+        margin-left: 320px;
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f8f8;
+    }
+
+    .content {
+        width: 100%;
+        height: 90vh;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: left;
+    }
+
+    .header {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+        margin-left: 35px;
+    }
+
+    .b {
+        text-align: center;
+        color: #274686;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-left: 45px;
+    }
+
+    .buttons button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .buttons .add {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .event-list {
+        margin-top: 20px;
+    }
+
+    .event-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        margin-left: 50px;
+    }
+
+    .event-item img.sport-icon {
+        height: 40px;
+        width: 60px;
+        margin-right: 10px;
+    }
+
+    .event-item .trash-icon {
+        color: red;
+        font-size: 25px;
+        cursor: pointer; 
+        /* margin-left: 500px; */
+        /* Added space between text and icon */
+        position: absolute;
+        /* top: 8px; */
+        right: 80px;
+       
+        
+    }
+
+    .event-details {
+        flex: 1;
+    }
+
+
+
+    .modal-title {
+        margin-bottom: 15px;
+        margin-top: 15px;
+        font-size: 24px;
+
+    }
+
+    .modal-dialog {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 1rem);
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        /* Adjust the height as needed */
+        width: 600px;
+    }
+
+    .modal-body {
+        overflow-y: auto;
+        /* Add this to make the modal body scrollable if content overflows */
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+
+    /* Align buttons to the left */
+    .modal-footer {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+</style>
+<body>
+    <div class="sidebar">
+        <img src="{{ url_for('static', filename='images/logoacsn.png.png') }}" alt="College Logo" class="college-logo">
+        <div class="header">
+            <p class="b"><b>Government College of Engineering, Chhatrapati Sambhajinagar</b></p>
+        </div>
+        <a class="sidebar1" href="{{ url_for('admin') }}"><i class="fa fa-home fa-lg"></i><b>Website Banner</b></a>
+        <a class="sidebar1" href="{{ url_for('sports_sec') }}"><i class="fa fa-soccer-ball-o fa-lg"></i><b>Our Sports</b></a>
+        <a class="sidebar1" href="{{ url_for('notices') }}"><i class="fa fa-bell fa-lg"></i><b>Notice</b></a>
+        <a class="sidebar1" href="#"><i class="fa fa-graduation-cap fa-lg"></i><b>Academic Programmes</b></a>
+        <a class="sidebar1" href="#"><i class="fa fa-trophy fa-lg"></i><b>Hall of Fame</b></a>
+        <a class="sidebar1" href="#"><i class="fa fa-lightbulb-o fa-lg"></i><b>Our Inspiration</b></a>
+        <a class="sidebar1" href="{{ url_for('logout') }}"><i class="fa fa-sign-out fa-lg"></i><b>Log Out</b></a>
+
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <div style="margin-left: 20px;">
+                <h1><b>Notice</b></h1>
+                <p style="font-size: 16px;">Enter a unique Image for the Banner you’d like people to see it</p>
+                <h3><b>October</b></h3>
+                <div class="event-list">
+                    {% for notice in notices %}
+                    <div class="event-item">
+                        <span class="event-text">
+                            <b>{{ notice.title }}</b>
+                            <p>{{ notice.date }}</p>
+                            <p>{{ notice.description }}</p>
+                        </span>
+                        <form action="{{ url_for('delete_notice', notice_id=notice.id) }}" method="post" style="display: inline;">
+                            <button type="submit" class="btn btn-link">
+                                <i class="fa fa-trash trash-icon"></i>
+                            </button>
+                        </form>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <br>
+            <div class="buttons">
+                <button class="add" data-toggle="modal" data-target="#myModal">Add New Notice</button>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><b>Add Notice</b></h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="{{ url_for('notices') }}">
+                            {{ form.hidden_tag() }}
+                            <div class="form-group">
+                                {{ form.title.label }} {{ form.title(class_='form-control') }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.date.label }} {{ form.date(class_='form-control', type='date') }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.description.label }} {{ form.description(class_='form-control') }}
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Notice</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,832 @@
+/* CSS for body  */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+/* css for nav bar */
+
+header {
+    background-color: white;
+    color: white;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-self: center;
+}
+
+.header-img1 {
+    padding: 15px;
+}
+
+.header-img2 {
+    padding: 12px;
+}
+
+.header-img {
+
+    overflow-clip-margin: content-box;
+    overflow: clip;
+
+}
+
+.title-container {
+    margin-left: 10px;
+    padding: 10px;
+}
+
+
+
+h1,
+h2 {
+    margin: 5px;
+    color: #274686;
+
+}
+
+h3 {
+    color: black;
+}
+
+.main-nav,
+.sub-nav {
+    background-color: #F5F5DC;
+
+}
+
+.main-nav,
+.sub-nav1 {
+    background-color: #F5F5DC;
+
+}
+
+.main-nav ul,
+.sub-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    border: 100px;
+
+}
+
+
+.main-nav li a,
+.sub-nav li a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-right: 2px dotted silver;
+
+
+}
+
+.sub-nav {
+    background: linear-gradient(90deg, rgba(39, 70, 134, 0.8) 0%, rgba(240, 152, 50, 0.804) 100%);
+
+}
+
+.img3 {
+    height: 113vh;
+    width: 171vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    background-image: url(".jpg");
+    background-size: cover;
+
+
+}
+
+/* css for banner image */
+
+.Basket {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* Ensure the path is correct relative to your CSS file location */
+    background-image: url('../images/B1.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    height: 85vh;
+}
+
+
+
+    .container {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        /* Dark overlay */
+    }
+
+
+    .content {
+        max-width: 600px;
+        padding: 20px;
+        text-align: calc(1000px);
+        text-align: left;
+
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 25.83%,
+                rgba(0, 0, 0, 0.4) 64%,
+                rgba(0, 0, 0, 0.3) 74.41%,
+                rgba(0, 0, 0, 0) 97.86%);
+
+
+    }
+
+    .content h1 {
+        margin-top: 20px;
+        color: white;
+        margin-top: 200px;
+        text-decoration: none;
+
+    }
+
+    .content p {
+        margin-top: 5px;
+        color: white;
+    }
+
+    /* Admin login button */
+
+    .admin-login {
+       
+        position: fixed; /* Fixes the position */
+        right: 20px; /* Distance from the right edge */
+        top: 70px; /* Distance from the top edge */
+        padding: 10px 15px; /* Padding for the button */
+        background-color: #4CAF50; /* Button color */
+        color: white; /* Text color */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        z-index: 1000; /* Ensure it's on top of other elements */
+    }
+
+    .admin-button {
+        position: fixed; /* Fixes the position */
+        right: 20px; /* Distance from the right edge */
+        top: 70px; /* Distance from the top edge */
+        padding: 10px 15px; /* Padding for the button */
+        background-color: #4CAF50; /* Button color */
+        color: white; /* Text color */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        z-index: 1000; /* Ensure it's on top of other elements */
+    }
+
+    
+.admin-button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+
+    .button {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        display: inline-block;
+        margin-bottom: 177px;
+    }
+
+
+
+
+    /* our sports */
+
+.our-sports {
+    padding: 20px;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .title-container h2, .title-container h3 {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        margin-bottom: 5px; /* Space between titles */
+        
+    }
+
+    .header-images {
+        justify-content: right; /* Center header images on small screens */
+        margin-top: 10px; /* Space above images */
+    }
+
+    .main-nav ul, .sub-nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center items */
+        padding-left: 0; /* Remove padding */
+    }
+
+    .main-nav li, .sub-nav li {
+        margin-bottom: 5px; /* Space between items */
+        margin-right: 0; /* Reset right margin */
+    }
+
+    .Basket, .our-sports {
+        text-align: center; /* Center text for smaller screens */
+        padding-left: 10px; 
+        padding-right: 10px; 
+    }
+}
+
+
+
+.our-sports {
+
+
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+        /* Add color if needed */
+        align-items: center;
+        text-decoration: underline;
+        text-underline-offset: 15px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 16px;
+        color: #333;
+        /* Add color if needed */
+        margin-bottom: 20px;
+        text-align: center;
+
+
+    }
+}
+
+.gallery {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0px;
+
+}
+
+.gallery-item {
+    text-align: center;
+    /* margin: 0px;add margin to increase space between 2 images */
+
+}
+
+.gallery-item img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+
+
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+
+
+main {
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.gallery-item {
+    flex: 0 0 calc(20% - 10px); /* Five items per row with space */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: add rounded corners */
+}
+
+
+
+.btn:hover {
+    background-color: #333; /* Darker shade on hover */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .programmes {
+        grid-template-columns: repeat(1, 1fr); /* Single column on small screens */
+        gap: 20px; /* Adjust gap for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Adjust heading size */
+        margin-bottom: 30px; /* Adjust margin */
+    }
+}
+
+
+
+/*  css for notices  */
+
+.notice h1 {
+    font-size: 24px;
+    margin-top: auto ;
+    margin-bottom: 10px;
+    color: #333;
+    /* Add color if needed */
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+.notice {
+    margin-bottom: 20px;
+}
+
+.notification {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.notification h1 {
+    font-size: 1.2em;
+}
+
+
+
+.notification {
+    background: #BBE8FFEE;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #000;
+    /* Black text color */
+    text-underline-offset: 15px;
+    border-left: 5px solid #006699;
+    /* Add vertical line on the left side */
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.notification h1 {
+    font-size: 16px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: #333;
+    /* Add color if needed */
+    margin: 0;
+    /* Ensure there is no extra margin */
+    text-align: left;
+}
+
+.notification p {
+    font-size: 14px;
+    color: #333;
+    /* Add color if needed */
+    margin: 0;
+    /* Ensure there is no extra margin */
+    text-align: left;
+}
+
+
+/* css for academic programs */
+
+.Academic-Programmes {
+    width: 60%;
+    margin: 0 auto;
+    padding-bottom:  50px;
+    background-color:white;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    /* margin-left:0px;
+    margin-right:0px; */
+    justify-items: center;
+    
+    
+
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.programmes {
+    /* display:grid; */
+    /* grid-template-columns: repeat(2, 1fr); */
+    gap: 50px;
+}
+
+.programme-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    
+}
+
+.programme-card img {
+    width: 100%;
+    height: auto;
+   
+}
+
+.programme-card h2 {
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+.programme-card p {
+    margin: 10px;
+    color: #555;
+}
+
+.buttons {
+    display:flex;
+    justify-content:space-between;
+    padding: 10px;
+}
+
+.btn1 {
+    /* text-decoration: underline; */
+    color: hwb(200 17% 4% / 0.933);
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 8px;
+
+}
+
+.btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #464646;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-right: 5px;
+}
+
+.btn:hover {
+    background-color: #464646;
+}
+
+
+
+/*  css for gallary */
+
+.box12 {
+    position: relative;
+    height: 200px; /* Adjust the height as needed */
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .mySlides12 img {
+    width: 10%;
+    height: auto;
+    max-height: 700px; /* Adjust the max-height as needed */
+  }
+
+  .prev12,
+  .next12 {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: 250px;
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .next12 {
+    right: 50px;
+    border-radius: 3px 0 0 3px;
+    background-color: red;
+  }
+
+  .numbertext12 {
+    color: blue;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 10px;
+  }
+
+
+
+
+
+
+
+.hall {
+    /* background-image: url('B1.jpeg back.png'); */
+    background-image: url('../images/back.png');
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 110vh;
+  }
+  .hall h1 {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 45px;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      color: white;
+  }
+  
+  .gallery2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  /* Centering vertically */
+    margin: 0 auto;  /* Centering horizontally */
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    /* border: 2px solid #ccc; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+      .card2 {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        background-color:  rgba(0, 0, 0, 0.2);
+       margin-top: 0;
+  
+      }
+      .card2 img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .card2 .heading2, .card2 .caption2 {
+        margin: 10px 0;
+        font-weight: bold;
+        color: white;
+      }
+      .caption2 {
+        color: white;
+      }
+      .buttons2 {
+        margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      }
+      .button2 {
+        background-color: #ff4757;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      }
+      .button2:hover {
+        background-color: #ff6b81;
+      }
+
+.notice1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    /* Add color if needed */
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+.gallery1 {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    min-width:fit-content;
+    /* background-color: red; */
+    margin: 0;
+}
+
+.gallery1 {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Ensure images are side by side */
+    gap: 50px;
+    overflow-x: auto;
+    /* Allow horizontal scrolling if necessary */
+    margin: 0 auto;
+    max-width: 100%;
+    /* max-height: 10%; */
+}
+
+.gallery-item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-item1 {
+    width: 300px;
+    height: 300px;
+    /* Match height to the images */
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-item1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.caption {
+    margin: 5px 0;
+    /* Add some margin around the caption */
+    font-size: 16px;
+    text-align: center;
+    
+}
+
+
+
+
+/* login from css */
+
+/* 
+#admin-login-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+} */
+/* 
+#admin-login-btn:hover {
+    background-color: #0056b3;
+
+} */
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.login-container {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.login-container h1{
+    text-decoration: none;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #274686;
+    /* background: #274686; */
+
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button1 {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#close-popup-btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: calc(67% - 5px); /* Adjust the position to center the eye icon */
+}
+
+footer{
+    text-align: center;
+    opacity: 0.3;
+}
+
+
+

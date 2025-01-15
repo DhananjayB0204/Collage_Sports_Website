@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Gallery and Notifications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<style>
+
+    
+
+</style>
+
+<body>
+
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-messages">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+
+
+
+    <!-- Nav Bar -->
+
+
+    <header>
+        <nav class="main-nav">
+            <ul>
+                <li><a
+                        href="https://mis.geca.ac.in/iitmsv4eGq0RuNHb0G5WbhLmTKLmTO7YBcJ4RHuXxCNPvuIw=?enc=EGbCGWnlHNJ/WdgJnKH8DA==">MIS
+                        Login</a></li>
+                <li><a href="https://geca.ac.in/nep.htm">NEP-2020 Minor/OE/HSS</a></li>
+                <li><a href="https://geca.ac.in/pdf/phd.pdf">Centre of Excellence</a></li>
+                <li><a href="https://geca.ac.in/AICTE.aspx">AICTE Data</a></li>
+                <li><a href="https://geca.ac.in/NIRF.aspx">NIRF Data</a></li>
+                <li><a href="https://geca.ac.in/ariia.aspx">ARIIA</a></li>
+                <li><a href="https://geca.ac.in/gecanisp.htm">NISP/IIC</a></li>
+                <li><a href="#">TEQIP</a></li>
+                <li><a href="https://geca.ac.in/MoU.aspx">MoU's</a></li>
+                <li><a href="https://geca.ac.in/qip/homeqip.html">QIP</a></li>
+                <li><a href="https://geca.ac.in/naac.aspx">NAAC</a></li>
+                <li><a href="https://geca.ac.in/media-gallery.aspx">Photo Gallery</a></li>
+                <li><a href="https://geca.ac.in/news-archieved.aspx">Archived Notifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="header-top">
+        <img src="{{ url_for('static', filename='images/logoacsn.png.png') }}" alt="College Logo" class="college-logo">
+        <div class="title-container">
+            <h2>Government College of Engineering Aurangabad,</h2>
+            <h2>Chhatrapati Sambhajinagar</h2>
+            <h2>शासकीय अभियांत्रिकी महाविद्यालय औरंगाबाद, छत्रपती संभाजीनगर</h2>
+            <h3 style="opacity: 0.6;">(An Autonomous Institute of Government of Maharashtra)</h3>
+        </div>
+        <div class="header-images">
+            <img src="{{ url_for('static', filename='images/gif.gif') }}" alt="DTE Logo" class="header-img">
+            <img src="{{ url_for('static', filename='images/mahalogo.png.png') }}" alt="Maha Logo" class="header-img">
+            <img src="{{ url_for('static', filename='images/emblem.jpg.png') }}" alt="Emblem" class="header-img">
+        </div>
+    </div>
+
+    <main>
+        <nav class="sub-nav">
+            <ul>
+                <li><a href="https://geca.ac.in/default.aspx">Home</a></li>
+                <li><a href="#">Governance</a></li>
+                <li><a href="#">Departments</a></li>
+                <li><a href="https://geca.ac.in/academics.aspx">Academics</a></li>
+                <li><a href="#">Research</a></li>
+                <li><a href="#">Students Corner</a></li>
+                <li><a href="https://geca.ac.in/placement.aspx">Placements</a></li>
+                <li><a href="#">Grievances</a></li>
+                <li><a href="https://geca.ac.in/recruitment.aspx">Recruitment</a></li>
+                <li><a href="https://geca.ac.in/geca-contactus.aspx">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="Basket">
+            <a href="#" class="admin-login" id="admin-login" style="text-decoration: none;">Admin Login</a>
+
+            <div class="content">
+                <h1 style="text-align: left;">Kickstart your career in sports by exploring all the possibilities and
+                    sharpening your skills</h1>
+                <p style="text-align: left;">Master of Comupter Application (MCA)</p>
+                <a href="https://yas.nic.in/" class="button" style="text-align: left;">Know More</a>
+            </div>
+        </div>
+
+        <div class="our-sports">
+            <h1>OUR SPORTS</h1>
+            <p>The sports programs of the Olympic Dream India Sports Academy include Baseball, Basketball, Football,
+                Golf, Lacrosse, Soccer, Tennis, and Track and Field. Olympic Dream India Sports Academy's athletic and
+                personal development program also provides unique training that supports each department on campus and
+                truly sets Olympic Dream India Sports Academy apart from any other sports academy or athletic venue in
+                the world.</p>
+        </div>
+    </main>
+
+
+     <!-- Gallery Section -->
+
+
+     <main>
+       
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/basketball.jpg') }}" alt="Basketball">
+                <p>BASKETBALL</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/kho kho.jpg') }}" alt="Kho-Kho">
+                <p>KHO-KHO</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/football.jpg') }}" alt="Football">
+                <p>FOOTBALL</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/TABLE TENNIS.jpg') }}" alt="Table Tennis">
+                <p>TABLE TENNIS</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/shooting.png') }}" alt="Shooting">
+                <p>SHOOTING</p>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/5.jpg') }}" alt="Badminton">
+                <p>BADMINTON</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/chess.jpg') }}" alt="chess">
+                <p>CHESS</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/9.jpg') }}" alt="Yoga">
+                <p>YOGA</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/boxing.jpg') }}" alt="boxing">
+                <p>BOXING</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/vollyball.jpg') }}" alt="Volleyball">
+                <p>VOLLEYBALL</p>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/judo.jpg') }}" alt="judo">
+                <p>JUDO</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/Swimming.jpg') }}" alt="swimming">
+                <p>SWIMMING </p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/kabaddi.jpg') }}" alt="kabaddi">
+                <p>KABADDI</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/cricket.png') }}" alt="cricket">
+                <p>CRICKET</p>
+            </div>
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/Carrom.jpg') }}" alt="carrom">
+                <p>CARROM</p>
+            </div>
+
+        </div>
+
+
+
+        <!-- Notice Section -->
+
+
+
+        <div class="notice">
+            <h1>Notice</h1>
+        </div>
+
+        {% for notice in notices %}
+        <div class="notification">
+            <h1>{{ notice.title }}</h1>
+            <p>{{ notice.description }}.</p>
+        </div>
+        {% endfor %}
+        <!-- 
+        <div class="notification">
+            <h1>Upcoming Sports Meet Registration</h1>
+            <p>Registration for the annual sports meet closes on November 30, 2024. Sign up at the sports office or
+                online.</p>
+        </div>
+
+        <div class="notification">
+            <h1>Trial Dates for Basketball and Football Teams</h1>
+            <p>Trials for the college basketball and football teams will be held on December 5, 2024. All interested
+                students must register in advance.</p>
+        </div>
+
+        <div class="notification">
+            <h1>Sports Uniform Distribution</h1>
+            <p>Uniforms for the upcoming events will be available for collection in the sports office from December 10,
+                2024.</p>
+        </div>
+
+        <div class="notification">
+            <h1>Fitness Sessions for Athletes</h1>
+            <p>Weekly fitness sessions start from December 12, 2024. Check the sports schedule for timings.</p>
+        </div> -->
+    </main>
+
+
+
+    <!-- Academic programs -->
+
+
+    <div class="Academic-Programmes">
+        <h1>Academic Programmes</h1>
+        <div class="programmes">
+            <div class="programme-card">
+                <img src="{{ url_for('static', filename='images/B1.jpeg') }}"
+                    alt="GECA Academic programes and admission">
+                <h2>GECA Academic programes and admission</h2>
+                <p> GECA Academic programes and admission Students List</p>
+                <div class="buttons">
+                    <a href="{{ url_for('static', filename='images/list1.pdf') }}" class="btn1">View Programme</a>
+                    <a href="{{ url_for('static', filename='images/list1.pdf') }}" class="btn">View Admission</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+<!-- gallay of images -->
+    <h1><b>Sports Gallery</b></h1>
+  <div class="box12">
+    <div class="mySlides12">
+      <div class="numbertext12">1 / 14</div>
+      <img src="{{ url_for('static', filename='images/1.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">2 / 14</div>
+      <img src="{{ url_for('static', filename='images/2.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">3 / 14</div>
+      <img src="{{ url_for('static', filename='images/3.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">4 / 14</div>
+      <img src="{{ url_for('static', filename='images/4.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">5 / 14</div>
+      <img src="{{ url_for('static', filename='images/5.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">6 / 14</div>
+      <img src="{{ url_for('static', filename='images/6.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">7 / 14</div>
+      <img src="{{ url_for('static', filename='images/7.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">8 / 14</div>
+      <img src="{{ url_for('static', filename='images/8.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">9 / 14</div>
+      <img src="{{ url_for('static', filename='images/9.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">10 / 14</div>
+      <img src="{{ url_for('static', filename='images/10.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">11 / 14</div>
+      <img src="{{ url_for('static', filename='images/11.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">12 / 14</div>
+      <img src="{{ url_for('static', filename='images/12.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">13 / 14</div>
+      <img src="{{ url_for('static', filename='images/13.jpg') }}" style="width:100%">
+    </div>
+    <div class="mySlides12">
+      <div class="numbertext12">14 / 14</div>
+      <img src="{{ url_for('static', filename='images/14.jpg') }}" style="width:100%">
+    </div>
+    <a class="prev12" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next12" onclick="plusSlides(1)">&#10095;</a>
+
+    <script>
+                let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides12");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides,3000); // Change the interval as needed (3000 ms = 3 seconds)
+    }
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    // Stop the slideshow on mouse hover
+    document.querySelector('.box12').addEventListener('mouseover', () => {
+      clearTimeout(slideTimeout);
+    });
+
+    // Resume the slideshow on mouse leave
+    document.querySelector('.box12').addEventListener('mouseout', () => {
+      slideTimeout = setTimeout(showSlides, 3000);
+    });
+    </script>
+
+  </div>
+
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+
+
+
+    <!-- Hall of fame -->
+
+
+    <div class="hall">
+        <h1 style="color: white;">Hall Of Fame</h1>
+        <div class="gallery2">
+            <div class="card2">
+                <h2 class="heading2" id="galleryHeading">Siddesh Pande</h2>
+                <img id="galleryImage" src="{{ url_for('static', filename='images/siddesh_pande.png') }}"
+                    alt="Gallery Image">
+                <div class="caption2" id="galleryCaption">Image of Siddesh Pande</div>
+                <div class="buttons2">
+                    <button class="button2" onclick="prevImage()">&lt;</button>
+                    <button class="button2" onclick="nextImage()">&gt;</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            const images = [
+                { src: '{{ url_for("static", filename="images/champ1.jpg") }}', caption: 'Winner students.', heading: 'CHAMPIONS' },
+                { src: '{{ url_for("static", filename="images/champ2.jpg") }}', caption: ' GECA Trophys', heading: 'THROPHYS' },
+                { src: '{{ url_for("static", filename="images/champ 3.jpg") }}', caption: 'GECA Champions Movements', heading: 'MOVEMENT' }
+            ];
+
+            let currentIndex = 0;
+
+            function changeImage(index) {
+                const galleryImage = document.getElementById('galleryImage');
+                const galleryCaption = document.getElementById('galleryCaption');
+                const galleryHeading = document.getElementById('galleryHeading');
+                galleryImage.src = images[index].src;
+                galleryCaption.innerHTML = images[index].caption;
+                galleryHeading.innerHTML = images[index].heading;
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                changeImage(currentIndex);
+            }
+
+            function prevImage() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                changeImage(currentIndex);
+            }
+
+            setInterval(nextImage, 3000);  // Change image every 3 seconds
+        </script>
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+    <!--  Our Inspiration -->
+
+
+    <h1 class="notice1">Our Inspiration</h1>
+
+    <div class="gallery1">
+        <div class="gallery-item-container">
+            <div class="gallery-item1">
+                <img src="{{ url_for('static', filename='images/drSSD.jpg') }}" alt="ISRIRAM SINGH">
+            </div>
+            <p class="caption"><b>Dr.S.S.Dambhare</b></p>
+        </div>
+        <div class="gallery-item-container">
+            <div class="gallery-item1">
+                <img src="{{ url_for('static', filename='images/Ambekar_sir.jpg') }}" alt="LIMA RAM">
+            </div>
+            <p class="caption"><b>Dr.S.D.Ambekar</b></p>
+        </div>
+        <div class="gallery-item-container">
+            <div class="gallery-item1">
+                <img src="{{ url_for('static', filename='images/HOD_Sir.jpg') }}" alt="RUPENDER SINGH">
+            </div>
+            <p class="caption"><b>Dr.P.Shetiye</b></p>
+        </div>
+        <!-- Add more gallery items as needed -->
+    </div>
+    <!-- Login Form -->
+    <div id="popup-login" class="popup">
+        <div class="login-container">
+            <img src="{{ url_for('static', filename='images/logoacsn.png.png') }}" alt="College Logo"
+                class="college-logo">
+            <h1>Government College of Engineering Chhatrapati Sambhajinagar</h1>
+            <form id="login-form" method="POST" action="{{ url_for('login') }}">
+                {{ form.hidden_tag() }}
+                <label for="username">Username:</label>
+                {{ form.username(class="form-control", placeholder="Enter your username") }}
+                <label for="password">Password:</label>
+                {{ form.password(class="form-control", placeholder="Enter your password") }}
+                <button class="button1" type="submit">LOGIN</button>
+            </form>
+            <button class="button1" id="close-popup-btn">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('admin-login').addEventListener('click', function () {
+            document.getElementById('popup-login').style.display = 'flex';
+        });
+
+        document.getElementById('close-popup-btn').addEventListener('click', function () {
+            document.getElementById('popup-login').style.display = 'none';
+        });
+
+
+    </script>
+
+
+    <footer>
+        <p>&copy; 2024-2025 Sports Department. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

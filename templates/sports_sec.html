@@ -1,0 +1,367 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Banner</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    margin: 0;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar img {
+    margin-bottom: 30px;
+    margin-left: 70px;
+    margin-top: 40px;
+}
+
+.sidebar a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+.sidebar1 {
+    background-color: orange;
+    text-align: left;
+    padding: 20px;
+}
+
+.sidebar1 i {
+    margin-right: 20px;
+    font-size: 1.5em;
+    margin-left: 25px;
+}
+
+.content-wrapper {
+    margin-left: 320px;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.content {
+    width: 100%;
+    height: 90vh;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.header {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    margin-left: 35px;
+}
+
+.b {
+    text-align: center;
+    color: #274686;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-left: 45px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons .add {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.event-list {
+    margin-top: 20px;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-left: 50px;
+}
+
+
+
+
+        .event-item .event-details {
+            margin-right: 100px;
+            /* Adjusted spacing */
+        }
+
+  
+
+.event-item img.sport-icon {
+    height: 40px;
+    width: 60px;
+    margin-right: 300px;
+}
+
+.event-item .trash-icon {
+            color: red;
+            font-size: 25px;
+            cursor: pointer;
+            position: absolute;
+            right: 80px;
+        }
+
+
+.modal-title {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 1rem);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 600px;
+}
+
+.modal-body {
+    overflow-y: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        padding: 10px;
+    }
+
+    .sidebar img {
+        margin: 20px auto;
+    }
+
+    .sidebar a {
+        text-align: center;
+    }
+
+    .content-wrapper {
+        margin-left: 0;
+        padding: 10px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .content {
+        width: 100%;
+        height: auto;
+    }
+
+    .event-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+    }
+
+    .event-item .trash-icon {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .buttons {
+        justify-content: center;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .buttons button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="sidebar"> 
+        <img src="{{ url_for('static', filename='images/logoacsn.png.png') }}" alt="College Logo" class="college-logo">
+        <div class="header">
+            <p class="b"><b>Government College of Engineering, Chhatrapati Sambhajinagar</b></p>
+        </div> 
+        <a class="sidebar1" href="{{ url_for('admin') }}"><i class="fa fa-home fa-lg"></i><b>Website Banner</b></a>
+        <a class="sidebar1" href="{{ url_for('sports_sec') }}"><i class="fa fa-soccer-ball-o fa-lg"></i><b>Our Sports</b></a>
+        <a class="sidebar1" href="{{ url_for('notices') }}"><i class="fa fa-bell fa-lg"></i><b>Notice</b></a>
+        <a class="sidebar1" href="#"><i class="fa fa-graduation-cap fa-lg"></i><b>Academic Programmes</b></a> 
+        <a class="sidebar1" href="#"><i class="fa fa-trophy fa-lg"></i><b>Hall of Fame</b></a> 
+        <a class="sidebar1" href="#"><i class="fa fa-lightbulb-o fa-lg"></i><b>Our Inspiration</b></a> 
+        <a class="sidebar1" href="{{ url_for('logout') }}"><i class="fa fa-sign-out fa-lg"></i><b>Log Out</b></a>
+
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="month-section">
+                <h1><b>Our sports</b></h1>
+                <div class="event-list">
+                    {% for sport in sports %}
+                    <div class="event-item"> 
+                        <img src="{{ url_for('static', filename='images/' ~ sport.image_filename) }}" class="sport-icon" alt="{{ sport.name }}"> 
+                        <span><b>{{ sport.name }}</b><p>{{ sport.date }}</p></span>
+                        <form action="{{ url_for('delete_sport', sport_id=sport.id) }}" method="post" style="display: inline;">
+                            <button type="submit" class="btn btn-link">
+                                <i class="fa fa-trash trash-icon"></i>
+                            </button>
+                        </form>
+                    </div>
+                    {% endfor %}
+                </div>
+                <br>
+                <div class="buttons">
+                    <button class="add" data-toggle="modal" data-target="#myModal">Add Sports Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><b>Add New Sports</b></h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ url_for('sports_sec') }}" method="post" enctype="multipart/form-data">
+                            {{ form.hidden_tag() }}
+                            <div class="form-group">
+                                {{ form.name.label }} {{ form.name(class_='form-control') }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.date.label }} {{ form.date(class_='form-control', type='date') }} <!-- Date picker input field -->
+                            </div>
+                            <div class="form-group">
+                                {{ form.image.label }} {{ form.image(class_='form-control') }}
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Sport</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
